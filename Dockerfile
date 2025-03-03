@@ -22,24 +22,4 @@ RUN dotnet publish "./TestProj.csproj" -c $BUILD_CONFIGURATION -o /app/publish /
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
-
-# Install dependencies
-RUN apt-get update && apt-get install -y zip curl
-RUN mkdir /otel
-RUN curl -L -o /otel/otel-dotnet-install.sh https://github.com/open-telemetry/opentelemetry-dotnet-instrumentation/releases/download/v0.7.0/otel-dotnet-auto-install.sh
-RUN chmod +x /otel/otel-dotnet-install.sh
-
-ENV OTEL_DOTNET_AUTO_HOME=/otel
-
-
-RUN /bin/bash /otel/otel-dotnet-install.sh
-
-# Provide necessary permissions for the script to execute
-RUN chmod +x /otel/instrument.sh
-
-COPY platform-detection.sh /otel/
-
-# Run the platform detection script
-RUN chmod +x /otel/platform-detection.sh && /otel/platform-detection.sh
-
-ENTRYPOINT ["/bin/bash", "-c", "source /otel/instrument.sh && dotnet TestProj.dll"]
+ENTRYPOINT ["dotnet", "TestProj.dll"]
