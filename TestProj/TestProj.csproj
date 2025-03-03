@@ -1,0 +1,36 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UserSecretsId>aspnet-TestProj-a4516820-d91d-42c7-b93f-b90da08c6c21</UserSecretsId>
+    <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Elastic.Apm.NetCoreAll" Version="1.31.0" />
+    <PackageReference Include="Elastic.Apm.StackExchange.Redis" Version="1.31.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="8.0.2" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="8.0.2" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="8.0.2" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="8.0.2" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="8.0.11">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.19.6" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="8.0.7" />
+    <PackageReference Include="OpenTelemetry" Version="1.11.1" />
+    <PackageReference Include="OpenTelemetry.AutoInstrumentation" Version="1.10.0" />
+    <PackageReference Include="OpenTelemetry.Exporter.OpenTelemetryProtocol" Version="1.11.1" />
+    <PackageReference Include="OpenTelemetry.Extensions.Hosting" Version="1.11.1" />
+    <PackageReference Include="OpenTelemetry.Instrumentation.AspNetCore" Version="1.11.0" />
+    <PackageReference Include="OpenTelemetry.Instrumentation.Http" Version="1.11.0" />
+    <PackageReference Include="OpenTelemetry.Instrumentation.Runtime" Version="1.11.0" />
+    <PackageReference Include="OpenTelemetry.Instrumentation.SqlClient" Version="1.11.0-beta.1" />
+    <PackageReference Include="OpenTelemetry.Instrumentation.StackExchangeRedis" Version="1.11.0-beta.1" />
+    <PackageReference Include="StackExchange.Redis" Version="2.8.24" />
+  </ItemGroup>
+
+</Project>
